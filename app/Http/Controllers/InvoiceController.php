@@ -26,4 +26,11 @@ class InvoiceController extends Controller
         $details = Detail_Transaksi::all();
         return view('invoice.cetak', compact('members','transaksis','pakets','details'));
     }
+    public function show(Detail_Transaksi $detailTransaksi)
+    {
+        $details = Detail_Transaksi::find($detailTransaksi->id);
+        return view('invoice.show', compact('details'));
+    }
+    
+    
 }

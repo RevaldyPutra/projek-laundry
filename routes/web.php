@@ -46,6 +46,7 @@ Route::resource('transaksi', TransaksiController::class)->middleware('auth','rol
 //cetakinvoice
 Route::resource('invoice', InvoiceController::class)->middleware('auth','role:admin,kasir');
 Route::get('cetak/invoice', [InvoiceController::class, 'cetakinvoice'])->name('cetakinvoice');
+Route::get('invoice/{invoice}', [InvoiceController::class, 'show'])->name('show');
 
 //transaksi
 Route::middleware(['auth', 'role:kasir'])->group(function(){

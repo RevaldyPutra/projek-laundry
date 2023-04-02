@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use App\Models\Detail_Transakasi;
 class Paket extends Model
 {
     use HasFactory;
@@ -20,7 +20,7 @@ class Paket extends Model
     }
     public function detail_transaksis()
     {
-        return $this->belongsTo('App\Models\DetailTransaksi', 'detail_transaksis');
+        return $this->belongsTo(Detail_Transaksi::class);
     }
     public function transaksi()
     {
